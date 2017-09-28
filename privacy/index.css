@@ -1,0 +1,19 @@
+* {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	line-height: 1.6em;
+}
+
+body {
+	background-color: silver;
+}
+
+.main-container {
+	background-color: white;
+	margin: 0 auto;
+	max-width: 600px;
+	padding: 1em 2em 2em 2em;
+}
+
+h3 {
+	color: dodgerblue;
+}

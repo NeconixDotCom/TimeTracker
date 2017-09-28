@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Time Tracker App</title>
+		<script src="https://bitbucket.org/atlassian-connect/all.js" data-options="sizeToParent:true"></script>
+		<link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.0/css/aui.css" media="all">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="//aui-cdn.atlassian.com/aui-adg/5.9.0/js/aui.js"></script>
+		
+		<script src="//aui-cdn.atlassian.com/aui-adg/5.9.0/js/aui-experimental.js"></script>
+		<link rel="stylesheet" type="text/css" href="//aui-cdn.atlassian.com/aui-adg/5.9.0/css/aui-experimental.css"/>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/sinon.js/1.15.4/sinon.js"></script>
+		
+		<link rel="stylesheet" href="/app.css" media="all">
+	</head>
+	<body id="time-tracker-body">
+		<div class="aui-page-panel" id="time-tracker-page-panel">
+			<div class="aui-page-panel-inner">
+				<section class="aui-page-panel-content">
+					<div class="aui-group">
+						<div class="aui-item">
+							<h2>Track time</h2>
+						</div>
+					</div>
+					
+					<h3>Timer</h3>
+					
+					<div id="time-tracker-timer-panel">
+						<form class="aui" id="time-tracker-timer-form">
+							<fieldset>
+								<div class="field-group time-tracker-timer-form-row">
+									<label>Current work item</label>
+									<select id="time-tracker-timer-select" class="long-field" data-placeholder="Loading..." disabled>
+										<option></option>
+									</select>
+								</div>
+							</fieldset>
+						</form>
+						<div id="timer-tracker-timer-counter-container">
+							<div id="timer-tracker-timer-counter-container-column-fixed"><br/></div>
+							
+							<div id="timer-tracker-timer-counter-container-column">
+								<div class="timer-tracker-timer-counter-parameter"><span class="aui-icon aui-icon-small aui-iconfont-time">Time</span> Session time</div>
+								<div class="timer-tracker-timer-counter-value" id="timer-tracker-timer-counter-session-time"></div>
+							</div>
+							
+							<div id="timer-tracker-timer-counter-container-column">
+								<div class="timer-tracker-timer-counter-parameter"><span class="aui-icon aui-icon-small aui-iconfont-time">Time</span> Total time</div>
+								<div class="timer-tracker-timer-counter-value-secondary" id="timer-tracker-timer-counter-total-time"></div>
+							</div>
+							
+							<div id="timer-tracker-timer-counter-container-clear"></div>
+						</div>
+					</div>
+					
+					<h3>Recent work items</h3>
+					
+					<table class="aui" id="time-tracker-recent-table">
+						<thead>
+							<tr>
+								<th>Issue</th>
+								<th>Total time</th>
+								<th>Last activity</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody id="time-tracker-recent-table-body">
+							
+						</tbody>
+						<tfoot>
+							<td colspan="4" id="time-tracker-recent-table-footer">
+								<span id="time-tracker-recent-table-footer-message">Loading...</span>
+							</td>
+						</tfoot>
+					</table>
+				</section>
+			</div>
+		</div>
+		
+		<section role="dialog" id="time-tracker-delete-dialog" class="aui-layer aui-dialog2 aui-dialog2-small" aria-hidden="true">
+			<header class="aui-dialog2-header">
+				<h2 class="aui-dialog2-header-main">Delete work item</h2>
+				<a class="aui-dialog2-header-close">
+					<span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span>
+				</a>
+			</header>
+			
+			<div class="aui-dialog2-content">
+				<p>Are you sure you want to delete this work item?</p>
+			</div>
+			
+			<footer class="aui-dialog2-footer">
+				<div class="aui-dialog2-footer-actions">
+					<button id="time-tracker-delete-dialog-ok-button" class="aui-button aui-button-primary">Yes</button>
+					<button id="time-tracker-delete-dialog-cancel-button" class="aui-button">No</button>
+				</div>
+			</footer>
+		</section>
+		
+		<section role="dialog" id="time-tracker-log-dialog" class="aui-layer aui-dialog2 aui-dialog2-small" aria-hidden="true">
+			<header class="aui-dialog2-header">
+				<h2 class="aui-dialog2-header-main">Log work item</h2>
+				<a class="aui-dialog2-header-close">
+					<span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span>
+				</a>
+			</header>
+			
+			<div class="aui-dialog2-content">
+				<p id="time-tracker-log-dialog">Log work on work item?</p>
+			</div>
+			
+			<footer class="aui-dialog2-footer">
+				<div class="aui-dialog2-footer-actions">
+					<button id="time-tracker-log-dialog-ok-button" class="aui-button aui-button-primary">Yes</button>
+					<button id="time-tracker-log-dialog-cancel-button" class="aui-button">No</button>
+				</div>
+			</footer>
+		</section>
+		
+		<script src="/app.min.js"></script>
+	</body>
+</html>

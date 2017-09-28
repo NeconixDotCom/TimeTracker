@@ -1,0 +1,28 @@
+{
+	"key": "com.neconix.timetracker",
+	"name": "Time Tracker for Bitbucket",
+	"description": "Keep track of your time while working on project issues",
+	"vendor": {
+		"name": "Neconix",
+		"url": "https://timetracker-neconix.rhcloud.com/support"
+	},
+	"baseUrl": "https://timetracker-neconix.rhcloud.com",
+	"modules": {
+		"repoPage": [{
+			"name": {
+				"value": "Track time"
+			},
+			"url": "/app.html?uuid={repo_uuid}&path={repo_path}",
+			"params": {
+				"auiIcon": "aui-iconfont-time"
+			},
+			"location": "org.bitbucket.repository.actions",
+			"key": "app"
+		}],
+		"oauthConsumer": {
+			"clientId": "yPMdcFd2YwSH5vnz6x"
+		}
+	},
+	"scopes": ["repository", "issue", "issue:write"],
+	"contexts": ["account"]
+}

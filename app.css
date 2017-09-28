@@ -1,0 +1,82 @@
+#time-tracker-body {
+	background-color: white;
+}
+
+#time-tracker-page-panel {
+	border-bottom: 0;
+	margin: 0;
+}
+
+.time-tracker-actions {
+	float: right;
+}
+
+.time-tracker-no-wrap {
+	white-space: nowrap;
+}
+
+#time-tracker-timer-panel {
+	border: 1px solid silver;
+	border-radius: 0.4em;
+	margin: 1em 0;
+	padding: 0.6em 0.2em;
+}
+
+#timer-tracker-timer-counter-container {
+	display: none;
+	margin: 1em 0 0.5em 0;
+}
+
+#timer-tracker-timer-counter-container-column-fixed {
+	float: left;
+	text-align: right;
+	width: 130px;
+}
+
+#timer-tracker-timer-counter-container-column {
+	float: left;
+	min-width: 200px;
+	padding: 0 24px 0 16px;
+}
+
+#timer-tracker-timer-counter-container-icon {
+	color: #707070;
+}
+
+.timer-tracker-timer-counter-parameter {
+	color: #707070;
+}
+
+.timer-tracker-timer-counter-value {
+	font-size: 3em;
+}
+
+.timer-tracker-timer-counter-value-secondary {
+	font-size: 2em;
+	padding: 0.2em 0 0 0;
+}
+
+#timer-tracker-timer-counter-container-clear {
+	clear: both;
+}
+
+#time-tracker-recent-table th {
+	width: auto;
+}
+
+#time-tracker-recent-table th:first-child {
+	width: 50%;
+}
+
+#time-tracker-recent-table-body td {
+	vertical-align: middle;
+}
+
+#time-tracker-recent-table-footer {
+	text-align: left;
+	font-style: italic;
+}
+
+.time-tracker-text-secondary {
+	color: #707070;
+}
